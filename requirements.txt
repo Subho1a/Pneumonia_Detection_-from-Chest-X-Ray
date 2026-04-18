@@ -1,0 +1,9 @@
+# PyTorch
+torch>=2.0.0
+torchvision
+
+# Streamlit
+streamlit>=1.30.0
+
+# Image Processing
+Pillow>=9.0.0

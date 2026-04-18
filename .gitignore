@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# Streamlit config (optional)
+.streamlit/
+
+# Datasets inside project directory
+Chest_XRay_Datasets/
+Chest_XRay_Datasets.zip
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+extractor.py

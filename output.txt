@@ -1,0 +1,495 @@
+Requirement already satisfied: gdown in /usr/local/lib/python3.11/dist-packages (5.2.0)
+
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.11/dist-packages (from gdown) (4.13.3)
+
+Requirement already satisfied: filelock in /usr/local/lib/python3.11/dist-packages (from gdown) (3.17.0)
+
+Requirement already satisfied: requests[socks] in /usr/local/lib/python3.11/dist-packages (from gdown) (2.32.3)
+
+Requirement already satisfied: tqdm in /usr/local/lib/python3.11/dist-packages (from gdown) (4.67.1)
+
+Requirement already satisfied: soupsieve>1.2 in /usr/local/lib/python3.11/dist-packages (from beautifulsoup4->gdown) (2.6)
+
+Requirement already satisfied: typing-extensions>=4.0.0 in /usr/local/lib/python3.11/dist-packages (from beautifulsoup4->gdown) (4.12.2)
+
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests[socks]->gdown) (3.4.1)
+
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests[socks]->gdown) (3.10)
+
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/dist-packages (from requests[socks]->gdown) (2.3.0)
+
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests[socks]->gdown) (2025.1.31)
+
+Requirement already satisfied: PySocks!=1.5.7,>=1.5.6 in /usr/local/lib/python3.11/dist-packages (from requests[socks]->gdown) (1.7.1)
+
+cuda
+
+[1470, 1594]
+
+['NORMAL', 'PNEUMONIA']
+
+Training samples: 2451
+
+Validation samples: 613
+
+{'NORMAL': 0, 'PNEUMONIA': 1}
+
+2451
+
+77
+
+----------------------------------------------------------------
+
+        Layer (type)               Output Shape         Param #
+
+================================================================
+
+            Conv2d-1         [-1, 16, 222, 222]             160
+
+       BatchNorm2d-2         [-1, 16, 222, 222]              32
+
+         MaxPool2d-3         [-1, 16, 111, 111]               0
+
+            Conv2d-4         [-1, 32, 109, 109]           4,640
+
+       BatchNorm2d-5         [-1, 32, 109, 109]              64
+
+         MaxPool2d-6           [-1, 32, 54, 54]               0
+
+            Conv2d-7           [-1, 64, 52, 52]          18,496
+
+       BatchNorm2d-8           [-1, 64, 52, 52]             128
+
+         MaxPool2d-9           [-1, 64, 26, 26]               0
+
+           Conv2d-10          [-1, 128, 24, 24]          73,856
+
+      BatchNorm2d-11          [-1, 128, 24, 24]             256
+
+        MaxPool2d-12          [-1, 128, 12, 12]               0
+
+           Conv2d-13          [-1, 512, 10, 10]         590,336
+
+      BatchNorm2d-14          [-1, 512, 10, 10]           1,024
+
+        MaxPool2d-15            [-1, 512, 5, 5]               0
+
+          Flatten-16                [-1, 12800]               0
+
+           Linear-17                 [-1, 1024]      13,108,224
+
+      BatchNorm1d-18                 [-1, 1024]           2,048
+
+           Linear-19                  [-1, 256]         262,400
+
+      BatchNorm1d-20                  [-1, 256]             512
+
+           Linear-21                  [-1, 128]          32,896
+
+      BatchNorm1d-22                  [-1, 128]             256
+
+           Linear-23                    [-1, 3]             387
+
+          Softmax-24                    [-1, 3]               0
+
+================================================================
+
+Total params: 14,095,715
+
+Trainable params: 14,095,715
+
+Non-trainable params: 0
+
+----------------------------------------------------------------
+
+Input size (MB): 0.19
+
+Forward/backward pass size (MB): 25.28
+
+Params size (MB): 53.77
+
+Estimated Total Size (MB): 79.25
+
+----------------------------------------------------------------
+
+Epoch: 1 Training Loss: 0.7613333448187097 Training Accuracy: 87.43370053039575
+
+Epoch: 1 Validation Loss: 0.7273633301258087 Validation Accuracy: 86.6231647634584
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.7274
+
+🔄 Updated Learning Rate: 0.000100
+
+
+
+
+
+
+
+Epoch: 2 Training Loss: 0.6816040811600623 Training Accuracy: 91.10567115463077
+
+Epoch: 2 Validation Loss: 0.6733103096485138 Validation Accuracy: 91.51712887438825
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6733
+
+🔄 Updated Learning Rate: 0.000099
+
+
+
+
+
+
+
+Epoch: 3 Training Loss: 0.6513559431224675 Training Accuracy: 92.61525907792738
+
+Epoch: 3 Validation Loss: 0.6499059855937958 Validation Accuracy: 91.02773246329527
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6499
+
+🔄 Updated Learning Rate: 0.000098
+
+
+
+
+
+
+
+Epoch: 4 Training Loss: 0.6407561302185059 Training Accuracy: 92.6968584251326
+
+Epoch: 4 Validation Loss: 0.6410098910331726 Validation Accuracy: 92.33278955954323
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6410
+
+🔄 Updated Learning Rate: 0.000096
+
+
+
+
+
+
+
+Epoch: 5 Training Loss: 0.638008996263727 Training Accuracy: 92.57445940432477
+
+Epoch: 5 Validation Loss: 0.6315363556146621 Validation Accuracy: 92.33278955954323
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6315
+
+🔄 Updated Learning Rate: 0.000093
+
+
+
+
+
+
+
+Epoch: 6 Training Loss: 0.6202039587033259 Training Accuracy: 94.12484700122398
+
+Epoch: 6 Validation Loss: 0.6492533475160599 Validation Accuracy: 90.2120717781403
+
+🔄 Updated Learning Rate: 0.000090
+
+
+
+
+
+
+
+Epoch: 7 Training Loss: 0.626800288627674 Training Accuracy: 92.94165646674827
+
+Epoch: 7 Validation Loss: 0.6337538897991181 Validation Accuracy: 91.84339314845025
+
+🔄 Updated Learning Rate: 0.000087
+
+
+
+
+
+
+
+Epoch: 8 Training Loss: 0.6196631982729033 Training Accuracy: 93.67605059159527
+
+Epoch: 8 Validation Loss: 0.6265900909900666 Validation Accuracy: 92.82218597063621
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6266
+
+🔄 Updated Learning Rate: 0.000083
+
+
+
+
+
+
+
+Epoch: 9 Training Loss: 0.6191077534254495 Training Accuracy: 93.71685026519788
+
+Epoch: 9 Validation Loss: 0.6405625730752945 Validation Accuracy: 91.19086460032626
+
+🔄 Updated Learning Rate: 0.000079
+
+
+
+
+
+
+
+Epoch: 10 Training Loss: 0.6157190319779632 Training Accuracy: 93.75764993880048
+
+Epoch: 10 Validation Loss: 0.6407043069601059 Validation Accuracy: 90.37520391517128
+
+🔄 Updated Learning Rate: 0.000075
+
+
+
+
+
+
+
+Epoch: 11 Training Loss: 0.6164442099534072 Training Accuracy: 93.67605059159527
+
+Epoch: 11 Validation Loss: 0.6222563683986664 Validation Accuracy: 92.98531810766721
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6223
+
+🔄 Updated Learning Rate: 0.000070
+
+
+
+
+
+
+
+Epoch: 12 Training Loss: 0.6141905026002363 Training Accuracy: 93.88004895960832
+
+Epoch: 12 Validation Loss: 0.6259805083274841 Validation Accuracy: 92.49592169657423
+
+🔄 Updated Learning Rate: 0.000065
+
+
+
+
+
+
+
+Epoch: 13 Training Loss: 0.6101231559530481 Training Accuracy: 94.4920440636475
+
+Epoch: 13 Validation Loss: 0.608172607421875 Validation Accuracy: 94.12724306688418
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6082
+
+🔄 Updated Learning Rate: 0.000060
+
+
+
+
+
+
+
+Epoch: 14 Training Loss: 0.6085994452625126 Training Accuracy: 94.24724602203182
+
+Epoch: 14 Validation Loss: 0.6414267420768738 Validation Accuracy: 90.53833605220228
+
+🔄 Updated Learning Rate: 0.000055
+
+
+
+
+
+
+
+Epoch: 15 Training Loss: 0.6153050181153533 Training Accuracy: 93.83924928600571
+
+Epoch: 15 Validation Loss: 0.6136438727378846 Validation Accuracy: 93.6378466557912
+
+🔄 Updated Learning Rate: 0.000050
+
+
+
+
+
+
+
+Epoch: 16 Training Loss: 0.6111567090084027 Training Accuracy: 94.1656466748266
+
+Epoch: 16 Validation Loss: 0.6114113658666611 Validation Accuracy: 93.80097879282219
+
+🔄 Updated Learning Rate: 0.000045
+
+
+
+
+
+
+
+Epoch: 17 Training Loss: 0.6046428277895048 Training Accuracy: 94.859241126071
+
+Epoch: 17 Validation Loss: 0.6082787305116654 Validation Accuracy: 94.29037520391518
+
+🔄 Updated Learning Rate: 0.000040
+
+
+
+
+
+
+
+Epoch: 18 Training Loss: 0.600048165042679 Training Accuracy: 95.38963688290494
+
+Epoch: 18 Validation Loss: 0.611155554652214 Validation Accuracy: 93.80097879282219
+
+🔄 Updated Learning Rate: 0.000035
+
+
+
+
+
+
+
+Epoch: 19 Training Loss: 0.6018536586266059 Training Accuracy: 95.10403916768666
+
+Epoch: 19 Validation Loss: 0.6135204017162323 Validation Accuracy: 93.6378466557912
+
+🔄 Updated Learning Rate: 0.000030
+
+
+
+
+
+
+
+Epoch: 20 Training Loss: 0.6010060650961739 Training Accuracy: 95.2264381884945
+
+Epoch: 20 Validation Loss: 0.6026990324258804 Validation Accuracy: 94.61663947797716
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.6027
+
+🔄 Updated Learning Rate: 0.000025
+
+
+
+
+
+
+
+Epoch: 21 Training Loss: 0.5967334207002218 Training Accuracy: 95.71603427172583
+
+Epoch: 21 Validation Loss: 0.6118089437484742 Validation Accuracy: 93.4747145187602
+
+🔄 Updated Learning Rate: 0.000021
+
+
+
+
+
+
+
+Epoch: 22 Training Loss: 0.594614772053508 Training Accuracy: 96.0016319869441
+
+Epoch: 22 Validation Loss: 0.6042070329189301 Validation Accuracy: 94.77977161500816
+
+🔄 Updated Learning Rate: 0.000017
+
+
+
+
+
+
+
+Epoch: 23 Training Loss: 0.5930762221286823 Training Accuracy: 96.12403100775194
+
+Epoch: 23 Validation Loss: 0.6048779934644699 Validation Accuracy: 94.45350734094616
+
+🔄 Updated Learning Rate: 0.000013
+
+
+
+
+
+
+
+Epoch: 24 Training Loss: 0.5972036278093016 Training Accuracy: 95.71603427172583
+
+Epoch: 24 Validation Loss: 0.6033664375543595 Validation Accuracy: 94.61663947797716
+
+🔄 Updated Learning Rate: 0.000010
+
+
+
+
+
+
+
+Epoch: 25 Training Loss: 0.5953585691266245 Training Accuracy: 95.593635250918
+
+Epoch: 25 Validation Loss: 0.5983065098524094 Validation Accuracy: 95.26916802610114
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.5983
+
+🔄 Updated Learning Rate: 0.000007
+
+
+
+
+
+
+
+Epoch: 26 Training Loss: 0.5924573726468272 Training Accuracy: 95.9608323133415
+
+Epoch: 26 Validation Loss: 0.5940875858068466 Validation Accuracy: 95.26916802610114
+
+🔥 Best model saved at checkpoints/best_model.pth with Validation Loss: 0.5941
+
+🔄 Updated Learning Rate: 0.000004
+
+
+
+
+
+
+
+Epoch: 27 Training Loss: 0.59715216190784 Training Accuracy: 95.47123623011016
+
+Epoch: 27 Validation Loss: 0.6033191591501236 Validation Accuracy: 94.77977161500816
+
+🔄 Updated Learning Rate: 0.000002
+
+
+
+
+
+
+
+Epoch: 28 Training Loss: 0.5890928561037237 Training Accuracy: 96.57282741738067
+
+Epoch: 28 Validation Loss: 0.5948779076337815 Validation Accuracy: 95.92169657422512
+
+🔄 Updated Learning Rate: 0.000001
+
+
+
+
+
+
+
+Epoch: 29 Training Loss: 0.591076190595503 Training Accuracy: 96.16483068135454
+
+Epoch: 29 Validation Loss: 0.6019859045743943 Validation Accuracy: 94.77977161500816
+
+🔄 Updated Learning Rate: 0.000000
+
+
+
+
+
+
+
+Epoch: 30 Training Loss: 0.5942109281366522 Training Accuracy: 95.79763361893104
+
+Epoch: 30 Validation Loss: 0.6009724318981171 Validation Accuracy: 94.77977161500816
+
+🔄 Updated Learning Rate: 0.000000
+
+
+
+
+
+
