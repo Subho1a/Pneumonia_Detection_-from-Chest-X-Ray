@@ -2,10 +2,12 @@
 
 A web application built using **Streamlit** and **PyTorch** to detect Pneumonia from Chest X-Ray images using a custom Convolutional Neural Network (CNN).
 
-## 📦 Dataset
+---
+## Live Demo
+🔗 **Try the App:**
+[Pneumonia Detector](https://pneumonia-detection-from-chest-x-ray-jltq9jpiam93uefao2th6w.streamlit.app/)
 
-The model is trained on a dataset containing NORMAL and PNEUMONIA cases. You can download the exact dataset used for this project from Google Drive here:
-[Download Chest X-Ray Dataset](https://drive.google.com/file/d/1-SWJ_nIgotQ11ZHapb-uqWndvzeRs80d/view)
+
 
 ## 🚀 Features
 
@@ -13,6 +15,7 @@ The model is trained on a dataset containing NORMAL and PNEUMONIA cases. You can
 - **Deep Learning Model**: Utilizes a PyTorch-based CNN trained specifically on Chest X-Rays.
 - **Fast Inference**: Quick processing giving immediate probabilities.
 - **Easy Deployment**: Fully ready to run locally or be deployed directly via Streamlit Cloud.
+
 
 ## 🛠️ Project Setup
 
@@ -43,6 +46,13 @@ The model is trained on a dataset containing NORMAL and PNEUMONIA cases. You can
    ```bash
    streamlit run app.py
    ```
+  
+## 🧠 Model Architecture & Performance
+
+- **Model Performance**: Achieved a peak **Validation Accuracy of ~95.9%** during training phase.
+- **Network Depth**: 5 Convolutional Layers equipped with Max Pooling and Batch Normalization.
+- **Classification Head**: Fully connected Dense layers condensing features into `NORMAL` and `PNEUMONIA` classes.
+
 
 ## 💻 Tech Stack
 
@@ -64,12 +74,10 @@ Chest_XRay_Pneumonia_Detector/
 └── checkpoints/
     └── best_model.pth    # Saved best model weights 
 ```
+## 📦 Dataset
 
-## 🧠 Model Architecture & Performance
-
-- **Model Performance**: Achieved a peak **Validation Accuracy of ~95.9%** during training phase.
-- **Network Depth**: 5 Convolutional Layers equipped with Max Pooling and Batch Normalization.
-- **Classification Head**: Fully connected Dense layers condensing features into `NORMAL` and `PNEUMONIA` classes.
+The model is trained on a dataset containing NORMAL and PNEUMONIA cases. You can download the exact dataset used for this project from Google Drive here:
+[Download Chest X-Ray Dataset](https://drive.google.com/file/d/1-SWJ_nIgotQ11ZHapb-uqWndvzeRs80d/view)
 
 ## ⚠️ Disclaimer
 
